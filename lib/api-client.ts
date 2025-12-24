@@ -89,17 +89,17 @@ export const api = {
   post: <T>(
     path: string,
     body?: ApiOptions["body"],
-    init: Omit<ApiOptions, "path" | "method" | "body"> = {},
+    init: Omit<ApiOptions, "path" | "method" | "body"> = {}
   ) => apiFetch<T>({ path, method: "POST", body, ...init }),
   put: <T>(
     path: string,
     body?: ApiOptions["body"],
-    init: Omit<ApiOptions, "path" | "method" | "body"> = {},
+    init: Omit<ApiOptions, "path" | "method" | "body"> = {}
   ) => apiFetch<T>({ path, method: "PUT", body, ...init }),
   patch: <T>(
     path: string,
     body?: ApiOptions["body"],
-    init: Omit<ApiOptions, "path" | "method" | "body"> = {},
+    init: Omit<ApiOptions, "path" | "method" | "body"> = {}
   ) => apiFetch<T>({ path, method: "PATCH", body, ...init }),
   del: <T>(path: string, init: Omit<ApiOptions, "path" | "method" | "body"> = {}) =>
     apiFetch<T>({ path, method: "DELETE", ...init }),

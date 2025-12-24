@@ -9,8 +9,8 @@ export default function Home() {
           Welcome to the CCAK Back Office
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-          Manage academic services with confidence—student registration, grades,
-          documents, and deliberations in one streamlined workspace.
+          Manage academic services with confidence—student registration, grades, documents, and
+          deliberations in one streamlined workspace.
         </p>
         <div className="mt-10 grid w-full gap-4 text-left sm:grid-cols-2">
           <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">

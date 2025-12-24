@@ -8,6 +8,7 @@
 - Deliberations
 
 ## Stack
+
 - Next.js 14 (App Router)
 - Tailwind CSS
 - i18next (EN, FR, AR)
@@ -93,6 +94,7 @@ For a development container with hot reload, use the `dev` service (bind mounts 
 ```bash
 docker compose up dev
 ```
+
 The dev server is exposed on port 5173.
 
 For a production-like container using the Dockerfile build:
