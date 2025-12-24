@@ -1,9 +1,9 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "pnpm lint --fix",
-    "pnpm format --write"
+    "pnpm eslint --fix",
+    "pnpm prettier --write"
   ],
   "*.{css,md,json,yml,yaml}": [
-    "pnpm format --write"
+    "pnpm prettier --write"
   ]
 }
