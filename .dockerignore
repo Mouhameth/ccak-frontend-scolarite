@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.git
+.gitignore
+.pnpm-store
+npm-debug.log*
+pnpm-debug.log*
+*.env
+*.env.local
+*.log
+coverage
