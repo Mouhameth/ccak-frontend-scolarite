@@ -2,14 +2,16 @@
 
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 
 type ProtectedRouteProps = {
   children: React.ReactNode;
 };
 
-export default function ProtectedRoute({ children }: ProtectedRouteProps) {
-  const { data: session, status } = useSession();
+function ProtectedRouteInner({ children }: ProtectedRouteProps) {
+  const sessionState = useSession();
+  const session = sessionState?.data;
+  const status = sessionState?.status ?? "loading";
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -17,7 +19,8 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   useEffect(() => {
     if (status === "unauthenticated" || session?.error === "RefreshAccessTokenError") {
       const query = searchParams.toString();
-      const callbackUrl = query ? `${pathname}?${query}` : pathname;
+      const safePath = pathname ?? "/";
+      const callbackUrl = query ? `${safePath}?${query}` : safePath;
       const loginUrl = `/login?callbackUrl=${encodeURIComponent(callbackUrl)}`;
       router.replace(loginUrl);
     }
@@ -36,4 +39,18 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   }
 
   return <>{children}</>;
+}
+
+export default function ProtectedRoute(props: ProtectedRouteProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center text-sm text-zinc-500">
+          Preparing your session…
+        </div>
+      }
+    >
+      <ProtectedRouteInner {...props} />
+    </Suspense>
+  );
 }

@@ -88,7 +88,7 @@ It reads `NEXT_PUBLIC_API_BASE_URL` and attaches the NextAuth access token when 
 - SessionProvider is wired in `app/providers.tsx`; use `useSession` or the `useAuth` helper from `lib/auth-client.ts`.
 - Login route: `/login` (redirects to Keycloak and returns to the original URL).
 - Password reset: `/forgot-password` (links to Keycloak reset page).
-- Protected routes: `middleware.ts` guards `/dashboard` and `/admin` (adjust the matcher as needed).
+- Protected routes: `proxy.ts` guards `/dashboard` and `/admin` (adjust the matcher as needed).
 - Email templates for password reset are configured in Keycloak (realm → Email → Templates).
 
 Required environment variables:
