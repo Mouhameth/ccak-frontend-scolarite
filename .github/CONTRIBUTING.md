@@ -6,13 +6,13 @@ Welcome! 🎓 This document defines how to contribute effectively to the CCAK pr
 
 ## 🌿 Branch Naming Convention
 
-| Purpose     | Prefix      | Example                           |
-|-------------|-------------|-----------------------------------|
-| New Feature | `feature/`  | `feature/student-registration`    |
-| Bug Fix     | `bugfix/`   | `bugfix/pdf-export-issue`         |
-| Hotfix      | `hotfix/`   | `hotfix/login-token-expired`      |
-| Refactor    | `refactor/` | `refactor/auth-service`           |
-| Docs        | `docs/`     | `docs/api-specs-update`           |
+| Purpose     | Prefix      | Example                        |
+| ----------- | ----------- | ------------------------------ |
+| New Feature | `feature/`  | `feature/student-registration` |
+| Bug Fix     | `bugfix/`   | `bugfix/pdf-export-issue`      |
+| Hotfix      | `hotfix/`   | `hotfix/login-token-expired`   |
+| Refactor    | `refactor/` | `refactor/auth-service`        |
+| Docs        | `docs/`     | `docs/api-specs-update`        |
 
 - Always branch from `develop`
 - Use lowercase with dashes `-` for readability
@@ -22,7 +22,6 @@ Welcome! 🎓 This document defines how to contribute effectively to the CCAK pr
 ## 📦 Git Commit Message Rules
 
 Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard.
-
 
 ### Valid `type` values:
 
@@ -55,20 +54,20 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/
 ## 🧪 Testing Guidelines
 
 - All features must include tests
-- Use `vitest` or `jest` 
+- Use `vitest` or `jest`
 - CI will reject PRs with failing tests
 
 ---
 
 ## 🚀 Pull Request Workflow
 
-| Rule                                | Description                                  |
-|-------------------------------------|----------------------------------------------|
-| 🔀 Branches                         | Merge to `develop`, never directly to `main` |
-| ✅ Review Required                  | At least 1 reviewer must approve              |
-| 🧪 CI Status                        | Tests/lint must pass before merge            |
-| 📝 Description                      | Provide context for every PR                 |
-| 🏷️ Labels                          | Tag the PR (e.g., `enhancement`, `bug`)      |
+| Rule               | Description                                  |
+| ------------------ | -------------------------------------------- |
+| 🔀 Branches        | Merge to `develop`, never directly to `main` |
+| ✅ Review Required | At least 1 reviewer must approve             |
+| 🧪 CI Status       | Tests/lint must pass before merge            |
+| 📝 Description     | Provide context for every PR                 |
+| 🏷️ Labels          | Tag the PR (e.g., `enhancement`, `bug`)      |
 
 ---
 
