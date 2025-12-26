@@ -8,19 +8,11 @@
 - Deliberations
 
 ## Stack
-<<<<<<< Updated upstream
-- Next.js 14 (App Router)
-- Tailwind CSS
-- i18next (EN, FR, AR)
-- Axios + Keycloak (OIDC)
-=======
-
 - Next.js 16 (App Router)
 - Tailwind CSS
 - TanStack Query (data fetching/caching)
 - Zustand (client state)
 - NextAuth + Keycloak (OIDC)
->>>>>>> Stashed changes
 - Docker (optional)
 
 ## Getting Started
@@ -48,20 +40,6 @@ If you are running the Docker app service, use [http://localhost:3000](http://lo
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-<<<<<<< Updated upstream
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
 ## Code Quality
 
 - Lint: `pnpm lint`
@@ -182,4 +160,3 @@ GitHub Actions pipeline (`.github/workflows/ci-cd.yml`) runs on every push:
 - `test`: installs dependencies and runs `pnpm test` (lint + Prettier check).
 - `build`: runs `pnpm build`.
 - `deploy-staging`: builds and pushes a staging Docker image to GHCR (`ghcr.io/<owner>/<repo>:staging`). Requires repository package permissions (uses `GITHUB_TOKEN` by default).
->>>>>>> Stashed changes
