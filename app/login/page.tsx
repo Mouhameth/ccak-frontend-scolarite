@@ -1,7 +1,9 @@
 import LoginRedirect from "./login-redirect";
 
 type LoginPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?:
+    | Record<string, string | string[] | undefined>
+    | Promise<Record<string, string | string[] | undefined>>;
 };
 
 const defaultCallbackUrl = "/dashboard";
@@ -27,7 +29,8 @@ const normalizeCallbackUrl = (value?: string | string[]) => {
   return defaultCallbackUrl;
 };
 
-export default function LoginPage({ searchParams }: LoginPageProps) {
-  const callbackUrl = normalizeCallbackUrl(searchParams?.callbackUrl);
+export default async function LoginPage({ searchParams }: LoginPageProps) {
+  const resolvedSearchParams = await Promise.resolve(searchParams);
+  const callbackUrl = normalizeCallbackUrl(resolvedSearchParams?.callbackUrl);
   return <LoginRedirect callbackUrl={callbackUrl} />;
 }
