@@ -29,7 +29,7 @@ export const useAuth = () => {
     }
 
     window.location.href = "/login";
-  }, [session?.idToken]);
+  }, [session]);
 
   return { session, status, login, logout };
 };
