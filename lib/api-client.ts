@@ -1,5 +1,7 @@
 "use client";
 
+import { getSession } from "next-auth/react";
+
 type ApiOptions = Omit<RequestInit, "body" | "headers"> & {
   /** Relative path (appends to base) or absolute URL */
   path: string;
@@ -27,10 +29,10 @@ const BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") ??
   (typeof window === "undefined" ? "" : window.location.origin);
 
-// Replace with your real token lookup (cookie, Zustand store, etc.)
-function getAuthToken(): string | undefined {
-  return undefined;
-}
+const getAuthToken = async (): Promise<string | undefined> => {
+  const session = await getSession();
+  return session?.accessToken;
+};
 
 async function handleResponse<T>(res: Response, expectJson: boolean): Promise<T> {
   if (res.ok) {
@@ -57,7 +59,7 @@ export async function apiFetch<T = unknown>(options: ApiOptions): Promise<T> {
 
   const url = path.startsWith("http") ? path : `${BASE_URL}${path}`;
 
-  const authToken = getAuthToken();
+  const authToken = await getAuthToken();
 
   const isJsonBody =
     body &&
