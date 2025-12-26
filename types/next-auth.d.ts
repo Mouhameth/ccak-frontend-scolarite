@@ -1,11 +1,10 @@
 import type { DefaultSession } from "next-auth";
 
 declare module "next-auth" {
-  interface Session {
+  interface Session extends DefaultSession {
     accessToken?: string;
     idToken?: string;
     error?: "RefreshAccessTokenError";
-    user?: DefaultSession["user"];
   }
 }
 
@@ -18,3 +17,5 @@ declare module "next-auth/jwt" {
     error?: "RefreshAccessTokenError";
   }
 }
+
+export {};

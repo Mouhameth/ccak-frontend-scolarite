@@ -8,6 +8,7 @@
 - Deliberations
 
 ## Stack
+
 - Next.js 16 (App Router)
 - Tailwind CSS
 - TanStack Query (data fetching/caching)
@@ -41,6 +42,7 @@ If you are running the Docker app service, use [http://localhost:3000](http://lo
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Code Quality
+
 - Lint: `pnpm lint`
 - Prettier format: `pnpm format`
 - Prettier check (CI): `pnpm format:check`
