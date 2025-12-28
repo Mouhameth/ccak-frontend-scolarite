@@ -7,8 +7,9 @@ import type { AcademicYear, AcademicProgram, FacultyMember } from "@/types/acade
 import { AcademicLevel, FacultyRank } from "@/types/academic";
 import type { DeliberationSession } from "@/types/deliberation";
 import { DeliberationStatus } from "@/types/deliberation";
-import type { Student, SemesterResult } from "@/types/student";
-import { Gender, StudentStatus } from "@/types/student";
+
+import type { Student, Guardian, Document, Admin } from "@/types/student";
+import { Gender, StudentStatus, GuardianRelationship, DocumentType, DocumentStatus } from "@/types/student";
 
 // =====================
 // ACADEMIC YEARS
